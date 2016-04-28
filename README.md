@@ -12,7 +12,12 @@ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
 gpg --export --armor 0353B12C | sudo apt-key add -
 apt-get update -y && apt-get install cassandra -y
 ```
-######2
+check
+```
+service cassandra status
+```
+
+######2 create table
 ```
 create keyspace findadoc with replication ={'class':'SimpleStrategy','replication_factor':3} and durable_writes=true;
 describe keyspaces;
